@@ -16,8 +16,8 @@ namespace TodoWebApp
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            //config.Formatters.Add(new ProtoBufFormatter());
+            //config.MessageHandlers.Add();
+            config.Formatters.Add(new ProtoBufFormatter());
 
             var builder = new ContainerBuilder();
             
@@ -32,6 +32,7 @@ namespace TodoWebApp
 
             var container = builder.Build();
             var resolver = new AutofacWebApiDependencyResolver(container);
+
             config.DependencyResolver = resolver;
         }
     }

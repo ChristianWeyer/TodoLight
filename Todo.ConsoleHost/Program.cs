@@ -10,7 +10,7 @@ namespace Todo.ConsoleHost
     class Program
     {
         private const string webApiUrl = 
-            "http://localhost:7778/services/todo";
+            "http://localhost:7778/";
 
         static void Main()
         {            
